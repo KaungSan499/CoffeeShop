@@ -1,0 +1,86 @@
+.text-justify{
+    text-align: justify;
+}
+.product-title {
+    font-size: 1.8rem;
+}
+
+.card-price {
+    font-size: 1.2rem;
+}
+
+.product-details-container img {
+    min-height: 300px; /* Set a minimum height for the image */
+    object-fit: cover;  /* Ensures the image covers the height without shrinking */
+    width: 100%; /* Full width of the container */
+}
+#quantity{
+    width: 60px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/*Responsive*/
+/*Responsive*/
+/*Responsive*/
+/*Responsive*/
+/* Adjustments for all screens*/
+@media (max-width: 1200px) {
+    .product-details-container .row {
+        flex-direction: column; /* Stack image on top */
+        align-items: center; /* Center content horizontally */
+    }
+
+    .product-details-container img {
+        min-height: 250px; /* Ensure the image is at least 250px */
+        width: 80%; /* Adjust width for a better centered layout */
+    }
+
+    .col-md-6 {
+        width: 100%; /* Ensure full width for better alignment */
+        max-width: 80%; /* Keep content centered in a container */
+    }
+}
+
+/* Adjust font sizes and layout for smaller screens */
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .card-price {
+        font-size: 1.2rem;
+    }
+
+    .product-details-container img {
+        min-height: 200px; /* Smaller image height for mobile */
+    }
+
+    .col-md-6 {
+        max-width: 90%; /* Increase content width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-title {
+        font-size: 1.3rem;
+    }
+
+    .card-price {
+        font-size: 1rem;
+    }
+
+    .product-details-container img {
+        min-height: 150px; /* Further reduce image height on very small screens */
+    }
+
+    .col-md-6 {
+        max-width: 95%; /* Max width slightly larger for very small screens */
+    }
+}

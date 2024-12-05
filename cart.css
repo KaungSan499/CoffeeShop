@@ -1,0 +1,61 @@
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
+.list-group-item span {
+    flex: 1;
+    margin-right: 10px;
+    word-wrap: break-word;
+}
+#cart-items {
+    max-height: 300px; /* You can adjust this height */
+    overflow-y: auto; /* Allows scrolling when there are too many items */
+}
+.quantity{
+    width: 3rem;
+    margin-left: 2rem;
+    margin-right: -1rem;
+}
+.btn-danger{
+    background: red;
+    
+}
+.btn-danger:hover{
+    background: white;
+    color: black;
+}
+.btn-plus{
+    background: green;
+    color: white;
+}
+.btn-neg{
+    background: red;
+    color: white;
+    
+}
+.btn-shop{
+    margin-left: 1rem;
+}
+#total-price{
+    margin-left: 1rem;
+}
+.body-container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+}
+.checkout-form {
+    margin-top: 2rem;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 5px;
+}
+.checkout-form input {
+    margin-bottom: 1rem;
+}
+.checkout-button {
+    margin-top: 1rem;
+}
+

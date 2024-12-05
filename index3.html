@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Coffee Shop1</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Custom Bootstrap Alert Box -->
+    <div id="customAlert" class="alert alert-success alert-dismissible fade custom-alert" role="alert">
+        <span id="alertMessage"></span>
+    </div>
+
+    <div class="header sticky-top">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-xl bg">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index3.html">
+                    <img src="Logo/Logo_TP2.png" style="width: 150px;" alt="Bean Boutique">
+                </a>
+
+                <!-- Toggle Button for Collapsed Navbar -->
+                <button class="navbar-toggler order-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nav Links -->
+                <div class="collapse navbar-collapse order-4 order-lg-3 justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index3.html">
+                                <i class="bi bi-house-door icon"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="coffeeSelectionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-cup-hot icon"></i>
+                                <span>Coffee Selection</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="coffeeSelectionDropdown">
+                                <li><a class="dropdown-item" href="hotdrinks.html">Hot Drinks</a></li>
+                                <li><a class="dropdown-item" href="iceddrinks.html">Iced Drinks</a></li>
+                                <li><a class="dropdown-item" href="teaseries.html">Tea Series</a></li>
+                                <li><a class="dropdown-item" href="homecoffee.html">Home Coffee</a></li>
+                                <li><a class="dropdown-item" href="milkteaseries.html">Milk Tea Series</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="brewing-equipment.html">
+                                <i class="bi bi-gear icon"></i>
+                                <span>Brewing Equipment</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">
+                                <i class="bi bi-calendar-event icon"></i>
+                                <span>Events</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="special-offers.html">
+                                <i class="bi bi-tag icon"></i>
+                                <span>Special Offers</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html">
+                                <i class="bi bi-cart icon"></i>
+                                <span>Cart</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Search Bar -->
+                    <form class="d-flex mx-auto order-1 order-lg-6 my-4 my-lg-2" role="search" onsubmit="handleSearch(event)">
+                        <input class="form-control me-2" id="searchInput" type="search" placeholder="Search Products" aria-label="Search" onkeyup="filterItems()">
+                        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                    <!-- Search Results List (Initially hidden) -->
+                    <ul id="searchList" class="list-group position-absolute search-dropdown" style="display: none;">
+                        <li class="list-group-item" onclick="redirectToProduct('product-details1.html')" data-page="product-details1.html">Espresso</li>
+                        <li class="list-group-item" onclick="redirectToProduct('americano.html')">Americano</li>
+                        <li class="list-group-item" onclick="redirectToProduct('product-details4.html')" data-page="product-details4.html">Latte</li>
+                        <li class="list-group-item" onclick="redirectToProduct('cappuccino.html')">Cappuccino</li>
+                        <li class="list-group-item" onclick="redirectToProduct('product-details2.html')" data-page="product-details2.html">Espresso Machine</li>
+                        <li class="list-group-item" onclick="redirectToProduct('product-details3.html')" data-page="product-details3.html">Coffee Beans</li>
+                        <li class="list-group-item" onclick="redirectToProduct('coldbrew.html')">Cold Brew</li>
+                        <li class="list-group-item" onclick="redirectToProduct('specialty.html')">Specialty</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="body-container">
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="Images/CoffeeBeans.jpg" alt="Slide 1">
+                <div class="text ads">
+                    Discover Our Exclusive Coffee Blends
+                    <button onclick="window.location.href='coffee-selection.html'">Discover More</button>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="Images/EspressoMachine.jpg" alt="Slide 2">
+                <div class="text ads">
+                    Premium Brewing Equipment Available
+                    <button onclick="window.location.href='brewing-equipment.html'">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="Images/EnjoyingCoffee.jpg" alt="Slide 3">
+                <div class="text ads">
+                    Join Our Upcoming Coffee Tasting Event
+                    <button onclick="window.location.href='events.html'">Learn More</button>
+                </div>
+            </div>
+
+            <div class="mySlides">
+                <img src="Images/BrewingClass.jpg" alt="Slide 4">
+                <div class="text ads">
+                    Join Our Upcoming Brewing Class
+                    <button onclick="window.location.href='events.html'">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+        <div class="best-seller">
+            <h2 class="descriptions-h2">BEST SELLERS</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4 d-flex justify-content-center"> <!-- Center the card -->
+                        <a href="product-details1.html" class="card-link"> 
+                            <div class="card"> <!-- Set a max width for xs -->
+                                <img src="Images/Espresso.jpg" class="card-img-top" alt="Best-Seller-1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Espresso</h5>
+                                    <p class="card-text">A rich, concentrated coffee with bold flavor, serving as the base for many drinks.</p>
+                                    <p >$9.99</p> <!-- Added price here -->
+                                    <button class="btn add-to-cart" >ADD TO CART</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4 d-flex justify-content-center">
+                        <a href="product-details2.html" class="card-link"> 
+                            <div class="card"> <!-- Set a max width for xs -->
+                                <img src="Images/EspressoMachine3.jpg" class="card-img-top" alt="Best-Seller-2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Expresso Machine</h5>
+                                    <p class="card-text">An espresso machine brews rich coffee quickly, delivering cafe-quality beverages at home.</p>
+                                    <p >$999.99</p> <!-- Added price here -->
+                                    <button class="btn add-to-cart" d>ADD TO CART</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4 d-flex justify-content-center">
+                        <a href="product-details3.html" class="card-link"> 
+                            <div class="card"> <!-- Set a max width for xs -->
+                                <img src="Images/CoffeeBeans2.jpg" class="card-img-top" alt="Best-Seller-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Coffee Beans</h5>
+                                    <p class="card-text">Premium coffee beans deliver rich flavors and aromas, enhancing every cup you brew.</p>
+                                    <p>$5.99</p> <!-- Added price here -->
+                                    <button class="btn add-to-cart" >ADD TO CART</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 mb-4 d-flex justify-content-center">
+                        <a href="product-details4.html" class="card-link"> 
+                            <div class="card"> <!-- Set a max width for xs -->
+                                <img src="Images/Latte.jpg" class="card-img-top" alt="Best-Seller-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">Latte</h5>
+                                    <p class="card-text">A creamy espresso drink topped with frothy milk, perfect for a comforting coffee experience.</p>
+                                    <p>$4.99</p> <!-- Added price here -->
+                                    <button class="btn add-to-cart">ADD TO CART</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="cof-for-all">
+            <h2 class="descriptions-h2 space-top space-bottom">COFFEE FOR ALL</h2>
+            <h4 class="descriptions-h4">Reveal the Coffee Wonders of Bean Boutique</h4>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
